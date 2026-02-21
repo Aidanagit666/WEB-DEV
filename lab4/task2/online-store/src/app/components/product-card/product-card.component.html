@@ -1,0 +1,51 @@
+<div class="card">
+  <a class="image-wrap" [href]="product.link" target="_blank" rel="noopener noreferrer">
+    <img class="main-img" [src]="selectedImage" [alt]="product.name" />
+  </a>
+
+  <div class="thumbs" *ngIf="product.images?.length">
+    <button
+      class="thumb"
+      *ngFor="let img of product.images"
+      (click)="setImage(img)"
+      [class.active]="img === selectedImage"
+      type="button"
+      aria-label="Select image"
+    >
+      <img [src]="img" [alt]="product.name" />
+    </button>
+  </div>
+
+  <div class="content">
+    <a class="title" [href]="product.link" target="_blank" rel="noopener noreferrer">
+      {{ product.name }}
+    </a>
+
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="meta">
+      <div class="price">{{ product.price | number }} ₸</div>
+
+      <div class="rating">
+        <span class="star filled" *ngFor="let _ of [].constructor(fullStars)">★</span>
+        <span class="star half" *ngIf="hasHalfStar">★</span>
+        <span class="star empty" *ngFor="let _ of [].constructor(emptyStars)">★</span>
+        <span class="badge">{{ product.rating }}</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn" [href]="whatsappShareUrl()" target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
+
+      <a class="btn outline" [href]="telegramShareUrl()" target="_blank" rel="noopener noreferrer">
+        Telegram
+      </a>
+
+      <a class="btn ghost" [href]="product.link" target="_blank" rel="noopener noreferrer">
+        Open on Kaspi
+      </a>
+    </div>
+  </div>
+</div>

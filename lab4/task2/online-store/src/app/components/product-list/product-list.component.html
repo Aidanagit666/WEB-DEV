@@ -1,0 +1,10 @@
+<div class="page">
+  <header class="header">
+  <h1>Aidana Online Shop</h1>
+</header>
+<button (click)="sortAscending()">Цена по возрастанию</button>
+  <button (click)="sortDescending()">Цена по убыванию</button>
+  <section class="grid">
+    <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+  </section>
+</div>
