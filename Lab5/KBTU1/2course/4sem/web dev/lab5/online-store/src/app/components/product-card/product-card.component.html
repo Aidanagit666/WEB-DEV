@@ -24,20 +24,18 @@
         }
       </div>
     }
+  <div class="actions">
+  <a class="link" [href]="product.link" target="_blank">Open on Kaspi</a>
 
-    <div class="actions">
-      <a class="link" [href]="product.link" target="_blank">Open on Kaspi</a>
+  <button type="button" (click)="like()">
+    {{ product.isLiked ? 'Unlike' : 'Like' }}
+  </button>
 
-      <button
-  type="button"
-  [class.active-like]="product.likes === 1"
-  (click)="like()">
+  <button type="button" (click)="shareWhatsapp()">WA</button>
+  <button type="button" (click)="shareTelegram()">TG</button>
 
-  {{ product.likes === 1 ? 'Unlike' : 'Like' }}
-</button>
-      <button type="button" (click)="shareWhatsapp()">WhatsApp</button>
-      <button type="button" (click)="shareTelegram()">Telegram</button>
-      <button type="button" class="danger" (click)="onRemove()">Delete</button>
-    </div>
-  </div>
+  <button *ngIf="!product.isLiked" type="button" class="danger" (click)="onRemove()">
+    Delete
+  </button>
+</div>
 </div>

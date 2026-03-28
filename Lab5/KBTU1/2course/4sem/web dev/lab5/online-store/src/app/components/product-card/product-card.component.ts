@@ -11,6 +11,16 @@ import { Product } from '../../models/product.models';
 })
 export class ProductCardComponent {
   @Input() product!: Product;
+
+toggleLike() {
+  this.product.isLiked = !this.product.isLiked;
+
+  if (this.product.isLiked) {
+    this.product.likes++;
+  } else {
+    this.product.likes--;
+  }
+}
   @Output() removed = new EventEmitter<number>();
 
   currentImage = '';
@@ -22,13 +32,10 @@ export class ProductCardComponent {
   selectImage(img: string) {
     this.currentImage = img;
   }
-
-  like() {
-  if (this.product.likes === 0) {
-    this.product.likes = 1;
-  } else {
-    this.product.likes = 0;
-  }
+  
+like() {
+  this.product.isLiked = !this.product.isLiked;
+  this.product.likes = this.product.isLiked ? 1 : 0;
 }
 
   onRemove() {
@@ -45,4 +52,5 @@ export class ProductCardComponent {
     const text = encodeURIComponent(this.product.name);
     window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
   }
+  
 }

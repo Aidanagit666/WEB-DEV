@@ -176,7 +176,4 @@ private toNumber(value: number | string): number {
 
 sortDescending() {
   this.products = [...this.products].sort((a, b) => this.toNumber(b.price) - this.toNumber(a.price));
-}
-
-
-}
+}}

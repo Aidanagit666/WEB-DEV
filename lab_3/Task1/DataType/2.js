@@ -1,9 +1,9 @@
-//task1.Sum numbers from the visitor
+
 let a = +prompt("The first number?", "");
 let b = +prompt("The second number?", "");
 alert( a + b );
 
-//task2.Why 6.35.toFixed(1) == 6.3?
+
 alert( (6.35 * 10).toFixed(20) ); // 63.5
 
 //task3.Repeat until the input is a number
