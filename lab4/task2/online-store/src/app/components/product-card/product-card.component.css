@@ -1,0 +1,158 @@
+.card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.image-wrap {
+  display: block;
+  background: #fafafa;
+}
+
+.main-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbs {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  overflow-x: auto;
+  background: #fff;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.thumb {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb.active {
+  border-color: #111;
+}
+
+.content {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.desc {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.35;
+  min-height: 56px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0b0b0b;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.star {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.star.filled {
+  color: #111;
+}
+
+.star.empty {
+  color: #d7d7d7;
+}
+
+.star.half {
+  color: #777;
+}
+
+.badge {
+  margin-left: 6px;
+  font-size: 12px;
+  background: #111;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.actions {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  padding: 9px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.92;
+}
+
+.btn.outline {
+  background: #fff;
+  color: #111;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #111;
+  border-color: #e2e2e2;
+}
